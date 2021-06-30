@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %} 
+<h1>Register</h1>
+
+<div>
+	<form method = 'POST' action=''>
+		{{form.hidden_tag()}}
+		<fieldset>
+			<legend>
+			<div class="form-group">
+			{{form.username.label(class="forCSS")}}
+			{{form.username(class="forCSS")}}
+			</div>
+			<div class="form-group">
+			{{form.password.label(class="forCSS")}}
+			{{form.password(class="forCSS")}}
+			</div>
+			<div class="form-group">
+			{{form.password_confirm.label(class="forCSS")}}
+			{{form.password_confirm(class="forCSS")}}
+			</div>
+			<div class="form-group">
+			{{form.submit}}
+			</div>
+			</legend>
+		</fieldset>
+	</form>
+</div
+<div>
+Already Registered?<a href="{{url_for('login')}}">Sign in</a>
+</div>
+{% endblock content%} 
+  

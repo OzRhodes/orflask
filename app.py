@@ -2,9 +2,14 @@
 ''' A Flask app which showcases a microblog'''
 
 from flask import Flask, url_for, render_template
+
+#form import
+from forms import RegistrationForm, LoginForm
+
+
 app = Flask(__name__)
 
-
+app.config['SECRET_KEY'] = '' # for form access see README.md
 
 posts = [
     { 
@@ -63,3 +68,19 @@ def contact():
 def category():
     title = 'OR - Category'
     return render_template('category.html',title = title)
+
+
+@app.route('/register')
+def register():
+    title = 'OR - Register'
+    form = RegistrationForm()
+    
+    return render_template('register.html',title = title, form = form)
+    
+
+@app.route('/login')
+def login():
+    title = 'OR - Login'
+    form = LoginForm()
+    
+    return render_template('login.html',title = title, form = form)
