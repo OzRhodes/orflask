@@ -7,6 +7,6 @@
 
 {%for post in posts%}
   
-    <li>{{post[post_number]}}</li>
+    <h3>{{post.post_title}}</h3><p>{{post.post_content}}</p>
 {%endfor%}
 {% endblock content%} 
