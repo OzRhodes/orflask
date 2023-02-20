@@ -1,10 +1,10 @@
 #app.py the ORFLASK version of a microblog
 ''' A Flask app which showcases a microblog'''
 
-from flask import Flask, url_for, render_template
+from Flask import Flask, url_for, render_template
 
 #form import
-from forms import RegistrationForm, LoginForm
+#from forms import RegistrationForm, LoginForm
 
 
 app = Flask(__name__)
@@ -48,7 +48,7 @@ def index():
     title = 'Oz Rhodes'
     
     return render_template('index.html')
-
+'''
 @app.route('/blog')
 def blog():
     title = 'OR - Blog'
@@ -84,3 +84,4 @@ def login():
     form = LoginForm()
     
     return render_template('login.html',title = title, form = form)
+'''
